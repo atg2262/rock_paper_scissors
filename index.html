@@ -15,7 +15,13 @@
             "Scissors"
         ]; 
         function getComputerChoice() {
-            return Math.floor(Math.random()*myArray.length);
+            if (Math.floor(Math.random()*myArray.length) === 0) {
+                return "Rock"; 
+            } else if (Math.floor(Math.random()*myArray.length) === 1) {
+                return "Paper"; 
+            } else if (Math.floor(Math.random()*myArray.length) === 2) {
+                return "Scissors"; 
+            }
         }
         console.log(getComputerChoice());
     </script>
