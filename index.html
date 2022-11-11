@@ -8,20 +8,17 @@
 </head>
 <body>
     <script> 
+        
 
-        myArray = [
-            "Rock", 
-            "Paper", 
-            "Scissors"
-        ]; 
+        const randomNumber = Math.floor(Math.random()* 3); 
         function getComputerChoice() {
-            if (Math.floor(Math.random()*myArray.length) === 0) {
-                return "Rock"; 
-            } else if (Math.floor(Math.random()*myArray.length) === 1) {
-                return "Paper"; 
-            } else if (Math.floor(Math.random()*myArray.length) === 2) {
-                return "Scissors"; 
-            }
+           if (randomNumber === 0) {
+            return "Rock"; 
+           } else if (randomNumber === 1) {
+            return "Paper";
+           } else if (randomNumber === 2) {
+            return "Scissors"; 
+           }
         }
         console.log(getComputerChoice());
     </script>
