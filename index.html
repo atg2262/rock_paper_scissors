@@ -10,17 +10,39 @@
     <script> 
         
 
-        const randomNumber = Math.floor(Math.random()* 3); 
+        const computerPick = ["rock", "paper", "scissors"];  
         function getComputerChoice() {
-           if (randomNumber === 0) {
-            return "Rock"; 
-           } else if (randomNumber === 1) {
-            return "Paper";
-           } else if (randomNumber === 2) {
-            return "Scissors"; 
-           }
+           return computerPick[Math.floor(Math.random()* computerPick.length)]; 
         }
-        console.log(getComputerChoice());
+
+        const computerSelection = getComputerChoice(); 
+        console.log(computerSelection);
+
+        function playRound(playerSelection, computerSelection) { 
+            if (computerSelection === playerSelection) {
+                return `It's a tie! You both chose ${playerSelection}`; 
+            } else if (computerSelection === "scissors" && playerSelection === "rock"  ) {
+                return "You win! Rock beats scissors"; 
+            } else if (computerSelection === "paper" && playerSelection === "scissors") {
+                return "You win! Scissors beats paper"
+            } else if (computerSelection === "rock" && playerSelection === "paper") {
+                return "You win! Paper beats rock"
+            } else {
+                return `You lose! ${computerSelection} beats ${playerSelection}`
+            }
+        }  
+        playerSelection = prompt("Your whole life depends on this! Please choose either 'Rock, Paper, Scissors', and see if you will survive the battle!").toLowerCase();
+        console.log(playRound(playerSelection, computerSelection)); 
+
+        for (let i = 0; i < 5; i++) {
+            function game() {
+                playRound();
+            }
+        }
+            //add a for loop 
+            //insert game function 
+            //call playRound function
+        
     </script>
     
 </body>
