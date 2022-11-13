@@ -24,19 +24,12 @@
                 return `You win! ${playerSelection} beats ${computerSelection}`; 
             } else if (computerSelection === "scissors" && playerSelection === "paper" || computerSelection === "paper" && playerSelection === "rock" || computerSelection === "rock" && playerSelection === "scissors") {
                 return `You lose! ${computerSelection} beats ${playerSelection}`
+            } else {
+                return "Please choose 'Rock, Paper, or Scissors'"
             }
         }  
         const playerSelection = prompt("Your whole life depends on this! Please choose either 'Rock, Paper, Scissors', and see if you will survive the battle!").toLowerCase();
-        console.log(playRound(playerSelection, computerSelection)); 
-
-        function game(){
-            playRound(playerSelection, computerSelection); 
-        }
-
-        for (let i = 0; i < 5; i++) {
-            game(i); 
-        }
-        
+        console.log(playRound(playerSelection, computerSelection))
     </script>
     
 </body>
