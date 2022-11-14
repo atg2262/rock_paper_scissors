@@ -26,27 +26,31 @@
         let playerScore = 0; 
         let computerScore = 0;
 
-        //define win/loss/tie
-        let win = `You win!`
-        let loss = `You lose!`
-        let tie = `It's a tie!`
-
         //define checkWinner 
         function checkWinner(playerSelection, computerSelection) {
             if (computerSelection === playerSelection) {
-                return tie; 
+                return "Tie"; 
             } else if (computerSelection === "scissors" && playerSelection === "rock" || computerSelection === "paper" && playerSelection === "scissors" || computerSelection === "rock" && playerSelection === "paper"   ) {
-                return win; 
+                return "Win"; 
             } else if (computerSelection === "scissors" && playerSelection === "paper" || computerSelection === "paper" && playerSelection === "rock" || computerSelection === "rock" && playerSelection === "scissors") { 
-                return loss;
+                return "Loss";
             } else {
-                return "Please choose 'Rock, Paper, or Scissors'"
+                return "Invalid"
             }
         }
 
         //define playRound
         function playRound(playerSelection, computerSelection) { 
-            checkWinner(playerSelection, computerSelection)
+            const result = checkWinner(playerSelection, computerSelection); 
+            if (result === "Tie") {
+                return "It's a tie!" 
+            } else if (result === "Win") {
+                return `You win! ${playerSelection} beats ${computerSelection}`
+            } else if (result === "Loss") {
+                return `You lose! ${computerSelection} beats ${playerSelection}`
+            } else if (result === "Invalid") {
+                return "Invalid response. Please select 'Rock, Paper, or Scissors'"
+            }
 
             }
         console.log(playRound(playerSelection, computerSelection));
