@@ -6,56 +6,5 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <script> 
-
-        //define compterPick
-        const computerPick = ["rock", "paper", "scissors"];  
-        function getComputerChoice() {
-           return computerPick[Math.floor(Math.random()* computerPick.length)]; 
-        }
-        
-        //define computerSelection
-        const computerSelection = getComputerChoice(); 
-        console.log(computerSelection);
-
-        //define playerSelection 
-        const playerSelection = prompt("Choose 'Rock, Paper, or Scissors'");
-
-        //define scores 
-        let playerScore = 0; 
-        let computerScore = 0;
-
-        //define checkWinner 
-        function checkWinner(playerSelection, computerSelection) {
-            if (computerSelection === playerSelection) {
-                return "Tie"; 
-            } else if (computerSelection === "scissors" && playerSelection === "rock" || computerSelection === "paper" && playerSelection === "scissors" || computerSelection === "rock" && playerSelection === "paper"   ) {
-                return "Win"; 
-            } else if (computerSelection === "scissors" && playerSelection === "paper" || computerSelection === "paper" && playerSelection === "rock" || computerSelection === "rock" && playerSelection === "scissors") { 
-                return "Loss";
-            } else {
-                return "Invalid"
-            }
-        }
-
-        //define playRound
-        function playRound(playerSelection, computerSelection) { 
-            const result = checkWinner(playerSelection, computerSelection); 
-            if (result === "Tie") {
-                return "It's a tie!" 
-            } else if (result === "Win") {
-                return `You win! ${playerSelection} beats ${computerSelection}`
-            } else if (result === "Loss") {
-                return `You lose! ${computerSelection} beats ${playerSelection}`
-            } else if (result === "Invalid") {
-                return "Invalid response. Please select 'Rock, Paper, or Scissors'"
-            }
-
-            }
-        console.log(playRound(playerSelection, computerSelection));
-
-    </script>
-    
-</body>
+    <script src="index.js"></script>
 </html>
