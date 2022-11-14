@@ -5,4 +5,18 @@ function getComputerChoice(){
     console.log(choice);
 }
 
-getComputerChoice();
+function checkWinner() {
+    if (playerSelection === computerSelection) {
+        return "Tie";
+    } else if (playerSelection === "rock" && computerSelection === "scissors" ||
+        playerSelection === "paper" && computerSelection === "rock" ||
+        playerSelection === "scissors" && computerSelection === "paper") {
+        return "Player";
+    } else {
+        return "Computer";
+    } 
+}
+
+function playRound(playerSelection, computerSelection) {
+
+}
