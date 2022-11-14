@@ -44,12 +44,30 @@ function getPlayerChoice() {
 }
 
 function game() {
+    let playerScore = 0;
+    let computerScore = 0;  
     console.log("Did Dumb Dumb actually get this to work?");
     for (let i = 0; i < 5; i++) {
         const playerSelection = getPlayerChoice(); 
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
+        if (checkWinner(playerSelection, computerSelection) == "Player") {
+            playerScore++; 
+        } else if (checkWinner(playerSelection, computerSelection) == "Computer") {
+            computerScore++;
     }
+    }
+    console.log("Game Over"); 
+    if(playerScore > computerScore) {
+        console.log(`You have won ${playerScore} to ${computerScore}! Congrats!`); 
+    } else if (computerScore > playerScore) {
+        console.log(`You have lost ${computerScore} to ${playerScore}! You stink!`);
+    } else {
+        console.log("It's a tie. Lame.");
+    }
+
+    
 }
+
 
 game();
